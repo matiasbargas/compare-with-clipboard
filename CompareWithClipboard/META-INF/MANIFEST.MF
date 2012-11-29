@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CompareWithClipboard
+Bundle-SymbolicName: CompareWithClipboard; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: comparewithclipboard.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.compare;bundle-version="3.5.100",
+ org.eclipse.compare.core;bundle-version="3.5.100",
+ org.eclipse.text;bundle-version="3.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.jface.text

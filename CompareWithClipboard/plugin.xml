@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            id="comparewithclipboard.Activator"
+            targetID="#CompilationUnitEditorContext">
+         <action
+               class="comparewithclipboard.popup.actions.NewAction"
+               id="CompareWithClipboard.action2"
+               label="Compare With Clipboard"
+               menubarPath="additions">
+         </action>
+      </viewerContribution>
+   </extension>
+
+</plugin>
