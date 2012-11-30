@@ -8,7 +8,7 @@
             id="comparewithclipboard.Activator"
             targetID="#CompilationUnitEditorContext">
          <action
-               class="comparewithclipboard.popup.actions.NewAction"
+               class="comparewithclipboard.popup.actions.CompareWithClipBoardAction"
                id="CompareWithClipboard.action2"
                label="Compare With Clipboard"
                menubarPath="additions">

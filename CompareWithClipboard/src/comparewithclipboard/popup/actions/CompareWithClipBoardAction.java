@@ -4,20 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.compare.CompareConfiguration;
-import org.eclipse.compare.CompareEditorInput;
 import org.eclipse.compare.CompareUI;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.text.TextSelection;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IEditorActionDelegate;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-public class NewAction implements IEditorActionDelegate {
-
-	private static final String SELECTED_TEXT = "comparewithclipboard.popup.actions.NewAction.SELECTED_TEXT";
+public class CompareWithClipBoardAction implements IEditorActionDelegate {
 
 	private Shell shell;
 	
@@ -27,7 +25,7 @@ public class NewAction implements IEditorActionDelegate {
 	/**
 	 * Constructor for Action1.
 	 */
-	public NewAction() {
+	public CompareWithClipBoardAction() {
 		super();
 	}
 
@@ -35,7 +33,7 @@ public class NewAction implements IEditorActionDelegate {
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		shell = targetPart.getSite().getShell();
+		setShell(targetPart.getSite().getShell());
 	}
 
 	/**
@@ -54,14 +52,22 @@ public class NewAction implements IEditorActionDelegate {
 	public void selectionChanged(IAction action, ISelection selection) {
 		TextSelection tSelection = (TextSelection) selection;
 		String text = tSelection.getText();
-		selectedText.add(text);
+		selectedText.add(0,text);
 		System.out.println(text);
 	}
 
 	@Override
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub aca hago un cambio
 		
+	}
+
+	public void setShell(Shell shell) {
+		this.shell = shell;
+	}
+
+	public Shell getShell() {
+		return shell;
 	}
 
 }
