@@ -1,5 +1,8 @@
 package comparewithclipboard.popup.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.compare.CompareConfiguration;
 import org.eclipse.compare.CompareEditorInput;
 import org.eclipse.compare.CompareUI;
@@ -14,7 +17,12 @@ import org.eclipse.ui.IWorkbenchPart;
 
 public class NewAction implements IEditorActionDelegate {
 
+	private static final String SELECTED_TEXT = "comparewithclipboard.popup.actions.NewAction.SELECTED_TEXT";
+
 	private Shell shell;
+	
+	private final List<String> selectedText= new ArrayList<String>();
+	
 	
 	/**
 	 * Constructor for Action1.
@@ -36,7 +44,8 @@ public class NewAction implements IEditorActionDelegate {
 	public void run(IAction action) {
 		CompareConfiguration cc = new CompareConfiguration();
 		cc.setLeftEditable(true);
-		CompareUI.openCompareEditor(new CompareEditor(cc));
+		//cc.setProperty(NewAction.SELECTED_TEXT, selectedText.get(0));
+		CompareUI.openCompareEditor(new CompareEditor(cc, selectedText.get(0)));
 	}
 
 	/**
@@ -45,7 +54,7 @@ public class NewAction implements IEditorActionDelegate {
 	public void selectionChanged(IAction action, ISelection selection) {
 		TextSelection tSelection = (TextSelection) selection;
 		String text = tSelection.getText();
-		
+		selectedText.add(text);
 		System.out.println(text);
 	}
 
