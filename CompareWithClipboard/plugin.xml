@@ -10,8 +10,9 @@
          <action
                class="comparewithclipboard.popup.actions.CompareWithClipBoardAction"
                id="CompareWithClipboard.action2"
-               label="Compare With Clipboard"
-               menubarPath="additions">
+               label="Clipboard"
+               menubarPath="compareWithMenu/compareWithGroup"
+               tooltip="Compare Selected Text With Clipboard Content">
          </action>
       </viewerContribution>
    </extension>

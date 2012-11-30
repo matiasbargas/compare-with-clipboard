@@ -27,7 +27,7 @@ public class CompareItem implements ITypedElement, IStreamContentAccessor  {
 	}
 
 	public String getType() {
-		return "txt";
+		return "java";
 	}
 
 	public InputStream getContents() throws CoreException {

@@ -58,8 +58,7 @@ public class CompareWithClipBoardAction implements IEditorActionDelegate {
 
 	@Override
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
-		// TODO Auto-generated method stub aca hago un cambio
-		
+		// TODO Auto-generated method stub
 	}
 
 	public void setShell(Shell shell) {
