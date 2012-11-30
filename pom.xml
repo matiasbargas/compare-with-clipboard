@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.mule.tooling</groupId>
+	<artifactId>Mule-Tooling</artifactId>
+	<version>3.4.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho.groupid>org.eclipse.tycho</tycho.groupid>
+		<tycho-extras.groupid>org.eclipse.tycho.extras</tycho-extras.groupid>
+		<tycho.version>0.16.0</tycho.version>
+		<tycho-extras.version>0.16.0</tycho-extras.version>
+		<tooling-extras.version>1.1-SNAPSHOT</tooling-extras.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>CompareWithClipboardFeature</module>
+		<module>CompareWithClipboard</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>${tycho.groupid}</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!-- Manage Tycho versions (current = 0.16.0) -->
+				<plugin>
+					<groupId>${tycho.groupid}</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>${tycho.groupid}</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>${tycho.groupid}</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>${tycho.groupid}</groupId>
+					<artifactId>tycho-p2-publisher-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>${tycho.groupid}</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>${tycho-extras.groupid}</groupId>
+					<artifactId>tycho-p2-extras-plugin</artifactId>
+					<version>${tycho-extras.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>${tycho-extras.groupid}</groupId>
+					<artifactId>target-platform-validation-plugin</artifactId>
+					<version>${tycho-extras.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>eclipse-helios</id>
+			<url>http://download.eclipse.org/releases/helios</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>codehaus-snapshots</id>
+			<name>Codehaus Maven 2.x Snapshots Repository</name>
+			<url>http://snapshots.repository.codehaus.org</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
+
+</project>
